@@ -1,10 +1,14 @@
+/* CSS Document */
+
 :root {
+  --bg: #fefefe;
   --bg-primary: #ebebeb;
   --color-primary: #3c3c3c;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
   margin: 0px;
   padding: 0px;
   color: var(--color-primary);
@@ -53,8 +57,15 @@ hr {
   align-items: center;
   justify-content: flex-start;
   overflow: scroll;
-  padding: 12px;
+  padding: 0px 12px;
+  margin: 24px 0px;
   flex-shrink: 0;
+  z-index: 1;
+  height: 120px;
+
+  /* Box Fades */
+  background: var(--bg);
+  background: linear-gradient(90deg, #00000002 0%, #ffffff 49%, #00000003 100%);
 }
 
 .games a {
@@ -62,10 +73,10 @@ hr {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  margin: 12px;
-  min-width: 180px;
-  min-height: 80px;
+  border-radius: 6px;
+  margin: 0px 12px;
+  min-width: 220px;
+  min-height: 120px;
   background-color: var(--bg-primary);
 }
 
@@ -74,4 +85,78 @@ hr {
   margin-bottom: 0px;
   font-weight: bold;
   font-size: 18px;
+}
+
+/* Unity */
+#unity-loading-bar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#unity-progress-bar-empty {
+  width: 141px;
+  height: 18px;
+  margin-top: 10px;
+  margin-left: 6.5px;
+  background: url("./images/progress-bar-empty-dark.png") no-repeat center;
+}
+
+#unity-progress-bar-full {
+  width: 0%;
+  height: 18px;
+  margin-top: 10px;
+  background: url("./images/progress-bar-full-dark.png") no-repeat center;
+}
+
+#unity-warning {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  background: white;
+  padding: 10px;
+  display: none;
+}
+
+/* Unity */
+.main {
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.unityContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#unity-canvas {
+  background: #000000;
+  margin: 12px 0px;
+}
+
+#unity-fullscreen-button {
+  width: 32px;
+  height: 32px;
+  float: right;
+}
+
+#unity-fullscreen-button:hover {
+  cursor: pointer;
+}
+
+.gameHeader {
+  margin: 0px;
+}
+
+.gameHeaderHr {
+  margin: 12px 0px;
 }

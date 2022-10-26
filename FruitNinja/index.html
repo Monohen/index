@@ -1,119 +1,57 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Fruit Ninja</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>Index</title>
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <div class="navbar">
+      <a href="/"><h1>Index</h1></a>
+      <ul>
+        <li><a href="#Casual">Casual</a></li>
+        <li><a href="#Educational">Educational</a></li>
+        <li><a href="#Sandbox">Sandbox</a></li>
+        <li><a href="#Strategy">Strategy</a></li>
+        <li><a href="#A-Z">Survival</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <div>
+        <canvas id="unity-canvas"></canvas>
+        <div id="unity-loading-bar">
+          <div id="unity-logo"></div>
+          <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+          </div>
         </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Fruit Ninja</div>
+        <div id="unity-warning"></div>
+        <h1 class="gameHeader">
+          <a id="unity-build-title">Fruit Ninja</a
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+            id="unity-fullscreen-button"
+          >
+            <path d="M19.5 6h-15v9h15V6z" />
+            <path
+              fill-rule="evenodd"
+              d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v11.25C1.5 17.16 2.34 18 3.375 18H9.75v1.5H6A.75.75 0 006 21h12a.75.75 0 000-1.5h-3.75V18h6.375c1.035 0 1.875-.84 1.875-1.875V4.875C22.5 3.839 21.66 3 20.625 3H3.375zm0 13.5h17.25a.375.375 0 00.375-.375V4.875a.375.375 0 00-.375-.375H3.375A.375.375 0 003 4.875v11.25c0 .207.168.375.375.375z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </h1>
+        <hr class="gameHeaderHr" />
+        <ul>
+          <li>Controls</li>
+          <li>Slice: Drag Cursor</li>
+        </ul>
       </div>
     </div>
-    <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
-
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
-
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/FruitNinja.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/FruitNinja.data",
-        frameworkUrl: buildUrl + "/FruitNinja.framework.js",
-        codeUrl: buildUrl + "/FruitNinja.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Fruit Ninja",
-        productVersion: "0.1",
-        showBanner: unityShowBanner,
-      };
-
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
+    <script src="../Javascript/game.js"></script>
   </body>
 </html>

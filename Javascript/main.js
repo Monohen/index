@@ -1,35 +1,45 @@
 // JavaScript Document
-let casuals = [
-  "Asteroids",
-  "Bomberman",
-  "Brick Breaker",
-  "Centipede",
-  "Dino Game",
-  "Flappy Bird",
-  "Fruit Ninja",
-  "Minesweeper",
-  "PAC-MAN",
-  "Pong",
-  "Snake",
-];
-
 let games = [
   "Asteroids",
   "Bomberman",
   "Brick Breaker",
   "Centipede",
+  "CubeWorld",
   "Dino Game",
   "Flappy Bird",
+  "Frogger",
   "Fruit Ninja",
   "Minesweeper",
   "PAC-MAN",
   "Pong",
   "Snake",
+  "Space Invaders",
+  "Super Mario Bros.",
+  "Tetris",
+];
+
+let casuals = [
+  "Asteroids",
+  "Bomberman",
+  "Brick Breaker",
+  "Centipede",
+  "CubeWorld",
+  "Dino Game",
+  "Flappy Bird",
+  "Frogger",
+  "Fruit Ninja",
+  "Minesweeper",
+  "PAC-MAN",
+  "Pong",
+  "Snake",
+  "Space Invaders",
+  "Super Mario Bros.",
+  "Tetris",
 ];
 
 let edus = [];
 
-let sands = [];
+let sands = ["CubeWorld"];
 
 let stats = [];
 
