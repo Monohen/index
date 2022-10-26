@@ -57,7 +57,7 @@ let survGames = document.getElementById("survGames");
 function loadFeaturedGames() {
   games.forEach(function (e) {
     let game = document.createElement("a");
-    let gameTitleURL = "/".concat(e.split(" ").join("").concat("/"));
+    let gameTitleURL = "/index/".concat(e.split(" ").join("").concat("/"));
     game.setAttribute("href", gameTitleURL);
     game.innerText = e;
     featuredGames.append(game);
@@ -68,7 +68,7 @@ function loadFeaturedGames() {
 function loadCasualGames() {
   casuals.forEach(function (e) {
     let casual = document.createElement("a");
-    let gameTitleURL = "/".concat(e.split(" ").join("").concat("/"));
+    let gameTitleURL = "/index/".concat(e.split(" ").join("").concat("/"));
     casual.setAttribute("href", gameTitleURL);
     casual.innerText = e;
     casualGames.append(casual);
@@ -79,7 +79,7 @@ function loadCasualGames() {
 function loadEduGames() {
   edus.forEach(function (e) {
     let edu = document.createElement("a");
-    let gameTitleURL = "/".concat(e.split(" ").join("").concat("/"));
+    let gameTitleURL = "/index/".concat(e.split(" ").join("").concat("/"));
     edu.setAttribute("href", gameTitleURL);
     edu.innerText = e;
     eduGames.append(edu);
@@ -90,7 +90,7 @@ function loadEduGames() {
 function loadSandGames() {
   sands.forEach(function (e) {
     let sand = document.createElement("a");
-    let gameTitleURL = "/".concat(e.split(" ").join("").concat("/"));
+    let gameTitleURL = "/index/".concat(e.split(" ").join("").concat("/"));
     sand.setAttribute("href", gameTitleURL);
     sand.innerText = e;
     sandGames.append(sand);
@@ -100,7 +100,7 @@ function loadSandGames() {
 function loadStratGames() {
   stats.forEach(function (e) {
     let stat = document.createElement("a");
-    let gameTitleURL = "/".concat(e.split(" ").join("").concat("/"));
+    let gameTitleURL = "/index/".concat(e.split(" ").join("").concat("/"));
     stat.setAttribute("href", gameTitleURL);
     stat.innerText = e;
     stratGames.append(stat);
@@ -110,7 +110,7 @@ function loadStratGames() {
 function loadSurvGames() {
   survs.forEach(function (e) {
     let surv = document.createElement("a");
-    let gameTitleURL = "/".concat(e.split(" ").join("").concat("/"));
+    let gameTitleURL = "/index/".concat(e.split(" ").join("").concat("/"));
     surv.setAttribute("href", gameTitleURL);
     surv.innerText = e;
     survGames.append(surv);
