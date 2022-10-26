@@ -53,6 +53,12 @@ let stratGames = document.getElementById("stratGames");
 let survGames = document.getElementById("survGames");
 let originURL = "/";
 let origin = document.location.origin;
+if (origin == "monohen.github.io") {
+  let originURL = "/";
+} else {
+  console.warn("Running index locally or on not monohen website at " + origin);
+  let originURL = "/index/";
+}
 
 document.getElementById("websiteName").setAttribute("href", originURL);
 document.getElementById("websiteName").lastChild.innerText = "Monohen";
