@@ -60,6 +60,8 @@ if (origin == "monohen.github.io") {
   let originURL = "/index/";
 }
 
+console.log(originURL);
+
 document.getElementById("websiteName").setAttribute("href", originURL);
 document.getElementById("websiteName").lastChild.innerText = "Monohen";
 
