@@ -53,6 +53,8 @@ let stratGames = document.getElementById("stratGames");
 let survGames = document.getElementById("survGames");
 let originURL = "/";
 let origin = document.location.origin;
+console.log(origin);
+
 if (origin == "https://monohen.github.io/") {
   let originURL = "/index/";
 } else {
