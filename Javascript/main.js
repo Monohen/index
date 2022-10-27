@@ -52,14 +52,16 @@ let sandGames = document.getElementById("sandGames");
 let stratGames = document.getElementById("stratGames");
 let survGames = document.getElementById("survGames");
 let originURL = "/";
-let origin = document.location.origin;
-console.log(origin);
+let location = document.location.origin;
+console.log(location);
 
-if (origin == "https://monohen.github.io/") {
-  let originURL = "/index/";
+if (location == "https://monohen.github.io/") {
+  originURL = "/index/";
 } else {
-  console.warn("Running index locally or on not monohen website at " + origin);
-  let originURL = "/";
+  console.warn(
+    "Running index locally or on not monohen website at " + location
+  );
+  originURL = "/";
 }
 
 document.getElementById("websiteName").setAttribute("href", originURL);
