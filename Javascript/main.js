@@ -54,13 +54,11 @@ let survGames = document.getElementById("survGames");
 let originURL = "/";
 let origin = document.location.origin;
 if (origin == "https://monohen.github.io/") {
-  let originURL = "/";
+  let originURL = "/index/";
 } else {
   console.warn("Running index locally or on not monohen website at " + origin);
-  let originURL = "/index/";
+  let originURL = "/";
 }
-
-console.log(originURL);
 
 document.getElementById("websiteName").setAttribute("href", originURL);
 document.getElementById("websiteName").lastChild.innerText = "Monohen";
