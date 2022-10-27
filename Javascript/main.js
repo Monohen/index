@@ -55,7 +55,7 @@ let originURL = "/index/";
 let origin = document.location.origin;
 console.log(origin);
 
-if ((origin = "https://monohen.github.io")) {
+if (origin == "https://monohen.github.io") {
   originURL = "/index/";
 } else {
   console.warn("Running index locally or on not monohen website at " + origin);
