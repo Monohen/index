@@ -53,12 +53,11 @@ let stratGames = document.getElementById("stratGames");
 let survGames = document.getElementById("survGames");
 let originURL = "/index/";
 let origin = document.location.origin;
-console.log(origin);
 
-if (origin == "https://monohen.github.io") {
+if (origin === "https://monohen.github.io") {
   originURL = "/index/";
 } else {
-  console.warn("Running index locally or on not monohen website at " + origin);
+  console.log("Running index locally or on not monohen website at " + origin);
   originURL = "/";
 }
 
@@ -124,14 +123,3 @@ function loadSurvGames() {
     survGames.append(surv);
   });
 }
-
-loadFeaturedGames();
-loadEduGames();
-loadCasualGames();
-loadSandGames();
-loadStratGames();
-loadSurvGames();
-
-document
-  .getElementById("originURL")
-  .setAttribute("content", "10; " + originURL);
