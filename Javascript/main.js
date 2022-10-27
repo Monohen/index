@@ -81,6 +81,7 @@ function loadCasualGames() {
     let casual = document.createElement("a");
     let gameTitleURL = originURL.concat(e.split(" ").join("").concat("/"));
     casual.setAttribute("href", gameTitleURL);
+    casual.style.backgroundSize = "cover";
     casual.innerText = e;
     casualGames.append(casual);
   });
