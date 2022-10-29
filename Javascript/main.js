@@ -13,7 +13,6 @@ let games = [
   "PAC-MAN",
   "Pong",
   "Snake",
-  "Space Invaders",
   "Super Mario Bros.",
   "Tetris",
 ];
@@ -32,7 +31,6 @@ let casuals = [
   "PAC-MAN",
   "Pong",
   "Snake",
-  "Space Invaders",
   "Super Mario Bros.",
   "Tetris",
 ];
@@ -51,25 +49,15 @@ let eduGames = document.getElementById("eduGames");
 let sandGames = document.getElementById("sandGames");
 let stratGames = document.getElementById("stratGames");
 let survGames = document.getElementById("survGames");
-let originURL = "/index/";
-let origin = document.location.origin;
-
-if (origin === "https://monohen.github.io") {
-  originURL = "/index/";
-} else {
-  console.log("Running index locally or on not monohen website at " + origin);
-  originURL = "/";
-}
-
-document.getElementById("websiteName").setAttribute("href", originURL);
-document.getElementById("websiteName").lastChild.innerText = "Monohen";
 
 games.sort();
 
 function loadFeaturedGames() {
   games.forEach(function (e) {
     let game = document.createElement("a");
-    let gameTitleURL = originURL.concat(e.split(" ").join("").concat("/"));
+    let gameFile = e.split(" ").join("");
+    let gameTitleURL = originURL.concat(gameFile.concat("/"));
+    game.style.backgroundImage = "url(../images/" + gameFile + ".png";
     game.setAttribute("href", gameTitleURL);
     game.innerText = e;
     featuredGames.append(game);
@@ -78,49 +66,58 @@ function loadFeaturedGames() {
 
 function loadCasualGames() {
   casuals.forEach(function (e) {
-    let casual = document.createElement("a");
-    let gameTitleURL = originURL.concat(e.split(" ").join("").concat("/"));
-    casual.setAttribute("href", gameTitleURL);
-    casual.style.backgroundSize = "cover";
-    casual.innerText = e;
-    casualGames.append(casual);
+    let game = document.createElement("a");
+    let gameFile = e.split(" ").join("");
+    let gameTitleURL = originURL.concat(gameFile.concat("/"));
+    game.style.backgroundImage = "url(../images/" + gameFile + ".png";
+    game.setAttribute("href", gameTitleURL);
+    game.innerText = e;
+    casualGames.append(game);
   });
 }
 
 function loadEduGames() {
   edus.forEach(function (e) {
-    let edu = document.createElement("a");
-    let gameTitleURL = originURL.concat(e.split(" ").join("").concat("/"));
-    edu.setAttribute("href", gameTitleURL);
-    edu.innerText = e;
-    eduGames.append(edu);
+    let game = document.createElement("a");
+    let gameFile = e.split(" ").join("");
+    let gameTitleURL = originURL.concat(gameFile.concat("/"));
+    game.style.backgroundImage = "url(../images/" + gameFile + ".png";
+    game.setAttribute("href", gameTitleURL);
+    game.innerText = e;
+    eduGames.append(game);
   });
 }
 
 function loadSandGames() {
   sands.forEach(function (e) {
-    let sand = document.createElement("a");
-    let gameTitleURL = originURL.concat(e.split(" ").join("").concat("/"));
-    sand.setAttribute("href", gameTitleURL);
-    sand.innerText = e;
-    sandGames.append(sand);
+    let game = document.createElement("a");
+    let gameFile = e.split(" ").join("");
+    let gameTitleURL = originURL.concat(gameFile.concat("/"));
+    game.style.backgroundImage = "url(../images/" + gameFile + ".png";
+    game.setAttribute("href", gameTitleURL);
+    game.innerText = e;
+    sandGames.append(game);
   });
 }
 function loadStratGames() {
   stats.forEach(function (e) {
-    let stat = document.createElement("a");
-    let gameTitleURL = originURL.concat(e.split(" ").join("").concat("/"));
-    stat.setAttribute("href", gameTitleURL);
-    stat.innerText = e;
-    stratGames.append(stat);
+    let game = document.createElement("a");
+    let gameFile = e.split(" ").join("");
+    let gameTitleURL = originURL.concat(gameFile.concat("/"));
+    game.style.backgroundImage = "url(../images/" + gameFile + ".png";
+    game.setAttribute("href", gameTitleURL);
+    game.innerText = e;
+    stratGames.append(game);
   });
 }
 function loadSurvGames() {
   survs.forEach(function (e) {
-    let surv = document.createElement("a");
-    let gameTitleURL = originURL.concat(e.split(" ").join("").concat("/"));
-    surv.setAttribute("href", gameTitleURL);
-    surv.innerText = e;
-    survGames.append(surv);
+    let game = document.createElement("a");
+    let gameFile = e.split(" ").join("");
+    let gameTitleURL = originURL.concat(gameFile.concat("/"));
+    game.style.backgroundImage = "url(../images/" + gameFile + ".png";
+    game.setAttribute("href", gameTitleURL);
+    game.innerText = e;
+    survGames.append(game);
   });
 }

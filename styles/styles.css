@@ -61,7 +61,7 @@ hr {
   margin: 24px 0px;
   flex-shrink: 0;
   z-index: 1;
-  height: 120px;
+  height: 140px;
 
   /* Box Fades */
   background: var(--bg);
@@ -78,6 +78,16 @@ hr {
   min-width: 220px;
   min-height: 120px;
   background-color: var(--bg-primary);
+  transition: 0.3s ease-in-out;
+  font-size: 32px;
+  font-weight: bold;
+  background-size: cover;
+  color: transparent;
+}
+
+.games a:hover {
+  transform: scale(1.1);
+  color: #d1d1d185;
 }
 
 .catagoryHeader {
