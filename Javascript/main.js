@@ -11,6 +11,7 @@ let games = [
   "Fruit Ninja",
   "Minesweeper",
   "PAC-MAN",
+  "Physics",
   "Pong",
   "Snake",
   "Super Mario Bros.",
@@ -29,6 +30,7 @@ let casuals = [
   "Fruit Ninja",
   "Minesweeper",
   "PAC-MAN",
+  "Physics",
   "Pong",
   "Snake",
   "Super Mario Bros.",
@@ -37,7 +39,7 @@ let casuals = [
 
 let edus = [];
 
-let sands = ["CubeWorld"];
+let sands = ["CubeWorld", "Physics"];
 
 let stats = [];
 
